@@ -122,9 +122,15 @@
         const body = document.querySelector('body');
         const statement = document.querySelector('.statement');
 
-        let vx = 3; // Horizontal velocity
-        let vy = 3; // Vertical velocity
+        let vx = 1; // Horizontal velocity
+        let vy = 1; // Vertical velocity
         const radius = parseInt(window.getComputedStyle(ball).getPropertyValue('width')) / 2; // Radius of the ball
+
+        // Set random initial position within the screen
+        const initialX = Math.random() * (window.innerWidth - 2 * radius) + radius;
+        const initialY = Math.random() * (window.innerHeight - 2 * radius) + radius;
+        ball.style.left = initialX + 'px';
+        ball.style.top = initialY + 'px';
 
         function updateBallPosition() {
             const rect = body.getBoundingClientRect();
