@@ -60,7 +60,7 @@
         }
 
         .statement span a {
-            color: rgba(79, 83, 26, 0.3); 
+            color: rgba(224, 222, 142, 0.3); 
             text-decoration: none; /* Remove underline */
 
         }
@@ -110,7 +110,23 @@
         </div>
     </div>
 
-    
+    <script>
+        const links = document.querySelectorAll('.statement span a');
+
+        links.forEach(link => {
+            let timer;
+
+            link.addEventListener('mouseenter', () => {
+                timer = setTimeout(() => {
+                    link.style.color = '#8c365a'; // Change color after 1 seconds
+                }, 200);
+            });
+
+            link.addEventListener('mouseleave', () => {
+                clearTimeout(timer);
+            });
+        });
+    </script>
 </body>
 
 </html>
