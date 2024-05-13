@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: #000;
+            background-color: #fef9e3;
             color: #0d0c0c;
             padding: 20px;
             text-align: center;
@@ -40,6 +40,23 @@
             cursor: pointer;  /* Change cursor on hover */
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw; /* Adjusted font size for smaller screens */
+            }
+            .statement {
+                font-size: 6vw; /* Adjusted font size for smaller screens */
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+            100% {
+                transform: translateY(15px);
+            }
+        }
 
         h2 {
             font-size: 3em;
