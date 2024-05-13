@@ -8,17 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
     <style>
-  body {
+        body {
             margin: 0;
             padding: 0;
             background-color: #f5f5dc; /* Dim yellow background */
             font-family: 'Old Standard TT', serif; /* Old-school font */
             text-align: center; /* Center text horizontally */
-            height: 200vh; /* Increased height for demonstration */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 120vh;
+            height: 120vh; /* Adjusted height for demonstration */
         }
         
         h1 {
@@ -29,12 +28,14 @@
             font-size: 36px;
             font-weight: bold;
             margin: 0;
+            background-color: rgba(221, 67, 134, 0.9); /* Semi-transparent background for readability */
             padding: 20px 0;
             z-index: 999; /* Ensure it's above other content */
         }
 
         .content {
             margin-top: 100px; /* Add margin to prevent content from overlapping with the fixed h1 */
+            padding-top: 60px; /* Add padding to maintain space when h1 is fixed */
         }
 
         marquee-set {
@@ -70,11 +71,27 @@
 
         .statement {
             font-family: 'Old Standard TT', serif; /* Old-school font */
-            font-size: 60px; /* Huge font size */
+            font-size: 24px; /* Adjusted font size */
             text-align: left;
-            margin-bottom: 300px;
+            position: fixed; /* Keep the statement fixed */
+            top: 100px; /* Adjusted top position */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            width: 80%; /* Adjusted width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding for readability */
+            z-index: 998; /* Ensure it's below the h1 */
         }
 
+        .statement span {
+            font-weight: bold;
+            color: black; /* Default color */
+        }
+
+        .statement span:hover {
+            color: blue; /* Change color on hover */
+            cursor: pointer; /* Change cursor on hover */
+        }
 
         hr {
             border: none;
@@ -92,17 +109,11 @@
             </marquee-inner>
         </marquee-set>
         <div class="statement">
-            I am an Anthropologist, Tech-savvy, and a Designer. 
-            I am currently based in Oxford/London, UK. I am originally from Vancouver, Canada but also spent quite some time in Beijing, China. 
-            I have a B.A. in Human Sciences, and a MSc in Medical Anthropology, both from the University of Oxford.
+            I am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>. 
+            I am currently based in <span>Oxford/London</span>, UK. I am originally from <span>Vancouver</span>, Canada but also spent quite some time in <span>Beijing</span>, China. 
+            I have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.
         </div>
+    </div>
 </body>
-
-
-
-
-
-
-
 
 </html>
