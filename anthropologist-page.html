@@ -5,28 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthropology</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Libre Baskerville', serif;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1f1f1f;
+            color: #fff;
         }
 
         header {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
 
         h1 {
-            font-family: 'Old Standard TT', serif;
             font-size: 3em;
             margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .container {
@@ -40,14 +41,15 @@
         }
 
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
             justify-content: space-around;
         }
 
         .gallery img {
-            max-width: 300px;
-            margin-bottom: 20px;
+            max-width: 100%;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
@@ -56,7 +58,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -67,36 +69,36 @@
 
 <body>
     <header>
-        <h1>Contemporary Anthropology Arts</h1>
+        <h1>Enigmatic Nature</h1>
     </header>
     <div class="container">
         <section>
-            <h2>Exhibitions</h2>
+            <h2>Forest Mysteries</h2>
             <div class="gallery">
-                <img src="exhibition1.jpg" alt="Exhibition 1">
-                <img src="exhibition2.jpg" alt="Exhibition 2">
-                <img src="exhibition3.jpg" alt="Exhibition 3">
+                <img src="forest1.jpg" alt="Forest 1">
+                <img src="forest2.jpg" alt="Forest 2">
+                <img src="forest3.jpg" alt="Forest 3">
             </div>
         </section>
         <section>
-            <h2>Art Installations</h2>
+            <h2>Hidden Trails</h2>
             <div class="gallery">
-                <img src="installation1.jpg" alt="Installation 1">
-                <img src="installation2.jpg" alt="Installation 2">
-                <img src="installation3.jpg" alt="Installation 3">
+                <img src="trail1.jpg" alt="Trail 1">
+                <img src="trail2.jpg" alt="Trail 2">
+                <img src="trail3.jpg" alt="Trail 3">
             </div>
         </section>
         <section>
-            <h2>Sculptures</h2>
+            <h2>Mysterious Landscapes</h2>
             <div class="gallery">
-                <img src="sculpture1.jpg" alt="Sculpture 1">
-                <img src="sculpture2.jpg" alt="Sculpture 2">
-                <img src="sculpture3.jpg" alt="Sculpture 3">
+                <img src="landscape1.jpg" alt="Landscape 1">
+                <img src="landscape2.jpg" alt="Landscape 2">
+                <img src="landscape3.jpg" alt="Landscape 3">
             </div>
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Contemporary Anthropology Arts</p>
+        <p>&copy; 2024 Enigmatic Nature</p>
     </footer>
 </body>
 
