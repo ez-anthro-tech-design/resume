@@ -23,6 +23,25 @@
         }
 
         h1 {
+            font-size: 3vw; /* Responsive font size based on viewport width */
+            font-weight: bold;
+            background-color: #fef9e3; /* Dim yellow background */
+            margin: 0;
+            width: 100%; /* Take full width */
+            position: sticky; /* Stick the heading to the top */
+            top: 0; /* Stick to the top */
+            z-index: 999; /* Ensure it's above other content */
+            animation: bounce 2s infinite alternate; /* Bouncing animation */
+        }
+
+
+        h1 span:hover {
+            color: #a510ea; /* Change color on hover */
+            cursor: pointer;  /* Change cursor on hover */
+        }
+
+
+        h2 {
             font-size: 3em;
             margin-bottom: 20px;
             color: #fff;
@@ -58,7 +77,7 @@
         }
 
         footer {
-            background-color: #000;
+            background-color: #fef9e3;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -69,11 +88,12 @@
 
 <body>
     <header>
-        <h1>Enigmatic Nature</h1>
+        <h1><span>ERIC HUA QING ZHANG</span></h1>
+        <h2>Anthropology and I</h2>
     </header>
     <div class="container">
         <section>
-            <h2>Forest Mysteries</h2>
+            <h2>Deep Brain Stimulation Medical Technology</h2>
             <div class="gallery">
                 <img src="forest1.jpg" alt="Forest 1">
                 <img src="forest2.jpg" alt="Forest 2">
@@ -81,7 +101,7 @@
             </div>
         </section>
         <section>
-            <h2>Hidden Trails</h2>
+            <h2>Multispecies Ethnography in Thailand</h2>
             <div class="gallery">
                 <img src="trail1.jpg" alt="Trail 1">
                 <img src="trail2.jpg" alt="Trail 2">
@@ -89,7 +109,7 @@
             </div>
         </section>
         <section>
-            <h2>Mysterious Landscapes</h2>
+            <h2>Urban Green Spaces Ethnography</h2>
             <div class="gallery">
                 <img src="landscape1.jpg" alt="Landscape 1">
                 <img src="landscape2.jpg" alt="Landscape 2">
