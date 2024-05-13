@@ -101,6 +101,24 @@
             left: 50%; /* Start position at the center horizontally */
             transform: translate(-50%, -50%); /* Center it exactly */
         }
+
+        /* Styling for the paddles */
+        .paddle {
+            width: 10px;
+            height: 70px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left-paddle {
+            left: 0;
+        }
+
+        .right-paddle {
+            right: 0;
+        }
     </style>
 </head>
 
@@ -115,65 +133,100 @@
         </div>
     </div>
     <div class="ball"></div>
+    <div class="paddle left-paddle"></div>
+    <div class="paddle right-paddle"></div>
 
     <script>
-        // JavaScript for bouncing ball functionality
+        // JavaScript for ping pong game
         const ball = document.querySelector('.ball');
+        const leftPaddle = document.querySelector('.left-paddle');
+        const rightPaddle = document.querySelector('.right-paddle');
         const body = document.querySelector('body');
-        const statement = document.querySelector('.statement');
 
-        let vx = 1; // Horizontal velocity
-        let vy = 1; // Vertical velocity
-        const radius = parseInt(window.getComputedStyle(ball).getPropertyValue('width')) / 2; // Radius of the ball
+        let vx = 3; // Horizontal velocity of the ball
+        let vy = 3; // Vertical velocity of the ball
+        const ballRadius = parseInt(window.getComputedStyle(ball).getPropertyValue('width')) / 2; // Radius of the ball
 
-        // Set random initial position within the screen
-        const initialX = Math.random() * (window.innerWidth - 2 * radius) + radius;
-        const initialY = Math.random() * (window.innerHeight - 2 * radius) + radius;
+        // Set random initial position of the ball
+        const initialX = Math.random() * (window.innerWidth - 2 * ballRadius) + ballRadius;
+        const initialY = Math.random() * (window.innerHeight - 2 * ballRadius) + ballRadius;
         ball.style.left = initialX + 'px';
         ball.style.top = initialY + 'px';
 
+        // Set initial position of the paddles
+        const paddleWidth = parseInt(window.getComputedStyle(leftPaddle).getPropertyValue('width'));
+        const paddleHeight = parseInt(window.getComputedStyle(leftPaddle).getPropertyValue('height'));
+        const paddleMargin = 10;
+        const paddleSpeed = 10;
+        leftPaddle.style.top = `${window.innerHeight / 2 - paddleHeight / 2}px`;
+        rightPaddle.style.top = `${window.innerHeight / 2 - paddleHeight / 2}px`;
+
+        // Update ball position periodically
+        setInterval(updateBallPosition, 1000 / 60); // 60 frames per second
+
+        // Move paddles according to key presses
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'w') {
+                movePaddle(leftPaddle, -paddleSpeed);
+            } else if (event.key === 's') {
+                movePaddle(leftPaddle, paddleSpeed);
+            } else if (event.key === 'ArrowUp') {
+                movePaddle(rightPaddle, -paddleSpeed);
+            } else if (event.key === 'ArrowDown') {
+                movePaddle(rightPaddle, paddleSpeed);
+            }
+        });
+
+        function movePaddle(paddle, speed) {
+            const paddleRect = paddle.getBoundingClientRect();
+            const bodyRect = body.getBoundingClientRect();
+            if (paddle === leftPaddle) {
+                if (paddleRect.top + speed > bodyRect.top && paddleRect.bottom + speed < bodyRect.bottom) {
+                    paddle.style.top = `${paddleRect.top + speed}px`;
+                }
+            } else if (paddle === rightPaddle) {
+                if (paddleRect.top + speed > bodyRect.top && paddleRect.bottom + speed < bodyRect.bottom) {
+                    paddle.style.top = `${paddleRect.top + speed}px`;
+                }
+            }
+        }
+
         function updateBallPosition() {
-            const rect = body.getBoundingClientRect();
             const ballRect = ball.getBoundingClientRect();
-            const statementRect = statement.getBoundingClientRect();
+            const bodyRect = body.getBoundingClientRect();
+            const leftPaddleRect = leftPaddle.getBoundingClientRect();
+            const rightPaddleRect = rightPaddle.getBoundingClientRect();
 
             // Update position
             let nextX = ballRect.left + vx;
             let nextY = ballRect.top + vy;
 
-            // Check for collision with edges
-            if (nextX - radius < rect.left || nextX + radius > rect.right) {
-                vx *= -1; // Reverse horizontal velocity
-            }
-            if (nextY - radius < rect.top || nextY + radius > rect.bottom) {
+            // Check for collision with top and bottom edges
+            if (nextY - ballRadius < bodyRect.top || nextY + ballRadius > bodyRect.bottom) {
                 vy *= -1; // Reverse vertical velocity
             }
 
-            // Check for collision with statement
-            if (nextX - radius < statementRect.right && nextX + radius > statementRect.left && nextY - radius < statementRect.bottom && nextY + radius > statementRect.top) {
-                // Horizontal collision
-                if (nextX - radius < statementRect.right && nextX + radius > statementRect.right && vx > 0) {
-                    vx *= -1; // Reverse horizontal velocity
-                }
-                if (nextX + radius > statementRect.left && nextX - radius < statementRect.left && vx < 0) {
-                    vx *= -1; // Reverse horizontal velocity
-                }
-                // Vertical collision
-                if (nextY - radius < statementRect.bottom && nextY + radius > statementRect.bottom && vy > 0) {
-                    vy *= -1; // Reverse vertical velocity
-                }
-                if (nextY + radius > statementRect.top && nextY - radius < statementRect.top && vy < 0) {
-                    vy *= -1; // Reverse vertical velocity
-                }
+            // Check for collision with paddles
+            if (nextX - ballRadius < leftPaddleRect.right && nextX + ballRadius > leftPaddleRect.left && nextY - ballRadius < leftPaddleRect.bottom && nextY + ballRadius > leftPaddleRect.top) {
+                vx *= -1; // Reverse horizontal velocity
+            } else if (nextX - ballRadius < rightPaddleRect.right && nextX + ballRadius > rightPaddleRect.left && nextY - ballRadius < rightPaddleRect.bottom && nextY + ballRadius > rightPaddleRect.top) {
+                vx *= -1; // Reverse horizontal velocity
+            }
+
+            // Check for scoring
+            if (nextX - ballRadius < bodyRect.left || nextX + ballRadius > bodyRect.right) {
+                // Reset ball position
+                ball.style.left = `${window.innerWidth / 2}px`;
+                ball.style.top = `${window.innerHeight / 2}px`;
+                // Reset velocity
+                vx = Math.random() < 0.5 ? -3 : 3; // Randomize initial horizontal velocity
+                vy = Math.random() < 0.5 ? -3 : 3; // Randomize initial vertical velocity
             }
 
             // Update ball position
-            ball.style.left = nextX + 'px';
-            ball.style.top = nextY + 'px';
+            ball.style.left = `${nextX}px`;
+            ball.style.top = `${nextY}px`;
         }
-
-        // Update ball position periodically
-        setInterval(updateBallPosition, 1000 / 60); // 60 frames per second
     </script>
 </body>
 
