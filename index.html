@@ -177,6 +177,15 @@
             }
         });
 
+        // Stop paddles when keys are released
+        document.addEventListener('keyup', function(event) {
+            if (event.key === 'w' || event.key === 's') {
+                stopPaddle(leftPaddle);
+            } else if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+                stopPaddle(rightPaddle);
+            }
+        });
+
         function movePaddle(paddle, speed) {
             const paddleRect = paddle.getBoundingClientRect();
             const bodyRect = body.getBoundingClientRect();
@@ -189,6 +198,10 @@
                     paddle.style.top = `${paddleRect.top + speed}px`;
                 }
             }
+        }
+
+        function stopPaddle(paddle) {
+            paddle.style.top = paddle.style.top;
         }
 
         function updateBallPosition() {
