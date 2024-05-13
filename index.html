@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zooming Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .zoom {
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .zoom:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>This is a <span class="zoom" onclick="goToAnotherPage()">piece of text</span> appearing in the middle of the page.</p>
+    </div>
+
+    <script>
+        function goToAnotherPage() {
+            // Redirect to another page
+            window.location.href = "another-page.html";
+        }
+    </script>
+</body>
+</html>
