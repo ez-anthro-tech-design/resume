@@ -14,7 +14,6 @@
             background-color: #fef9e3;
             color: #fff;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         header {
@@ -23,7 +22,6 @@
             padding: 20px;
             text-align: center;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         h1 {
@@ -38,10 +36,25 @@
             animation: bounce 2s infinite alternate; /* Bouncing animation */
         }
 
-
         h1 span:hover {
             color: #a510ea; /* Change color on hover */
             cursor: pointer;  /* Change cursor on hover */
+        }
+
+        /* Define keyframes for rotation animation */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Apply rotation animation to h2 elements */
+        h2 {
+            display: inline-block; /* Make the span behave like an inline-block element */
+            animation: rotate 3s infinite alternate; /* Apply rotation animation */
         }
 
         @media (max-width: 768px) {
@@ -69,7 +82,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         .container {
@@ -77,13 +89,11 @@
             margin: 0 auto;
             padding: 20px;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         section {
             margin-bottom: 40px;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         .gallery {
@@ -92,7 +102,6 @@
             grid-gap: 20px;
             justify-content: space-around;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         .gallery img {
@@ -100,7 +109,6 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
         .gallery img:hover {
@@ -113,7 +121,6 @@
             padding: 20px;
             text-align: center;
             z-index: 998; /* Ensure it's above other content */
-
         }
 
     </style>
@@ -126,7 +133,10 @@
     </header>
     <div class="container">
         <section>
-            <h2>Deep Brain Stimulation Medical Technology</h2>
+            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
+            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
             <div class="gallery">
                 <img src="forest1.jpg" alt="Forest 1">
                 <img src="forest2.jpg" alt="Forest 2">
@@ -134,7 +144,10 @@
             </div>
         </section>
         <section>
-            <h2>Multispecies Ethnography in Thailand</h2>
+            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
+            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
             <div class="gallery">
                 <img src="trail1.jpg" alt="Trail 1">
                 <img src="trail2.jpg" alt="Trail 2">
@@ -142,7 +155,10 @@
             </div>
         </section>
         <section>
-            <h2>Urban Green Spaces Ethnography</h2>
+            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
+            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
+            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
             <div class="gallery">
                 <img src="landscape1.jpg" alt="Landscape 1">
                 <img src="landscape2.jpg" alt="Landscape 2">
