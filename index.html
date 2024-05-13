@@ -14,8 +14,10 @@
             align-items: center;
             height: 100vh;
         }
-        .zoom {
+        p {
             font-size: 24px;
+        }
+        .zoom {
             cursor: pointer;
             transition: transform 0.3s;
         }
@@ -26,13 +28,23 @@
 </head>
 <body>
     <div>
-        <p>This is a <span class="zoom" onclick="goToAnotherPage()">piece of text</span> appearing in the middle of the page.</p>
+        <p>Hi, my name is Eric! I am an <span class="zoom" onclick="goToAnthropologist()">Anthropologist</span>, a <span class="zoom" onclick="goToTechSavvy()">Tech-savvy</span>, and a <span class="zoom" onclick="goToDesigner()">Designer</span>.</p>
     </div>
 
     <script>
-        function goToAnotherPage() {
-            // Redirect to another page
-            window.location.href = "another-page.html";
+        function goToAnthropologist() {
+            // Redirect to another page for Anthropologist
+            window.location.href = "anthropologist-page.html";
+        }
+
+        function goToTechSavvy() {
+            // Redirect to another page for Tech-savvy
+            window.location.href = "tech-savvy-page.html";
+        }
+
+        function goToDesigner() {
+            // Redirect to another page for Designer
+            window.location.href = "designer-page.html";
         }
     </script>
 </body>
