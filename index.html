@@ -28,7 +28,7 @@
             font-size: 36px;
             font-weight: bold;
             margin: 0;
-            background-color: rgba(221, 67, 134, 0.9); /* Semi-transparent background for readability */
+            background-color: rgba(243, 143, 210, 0.9); /* Semi-transparent background for readability */
             padding: 20px 0;
             z-index: 999; /* Ensure it's above other content */
         }
@@ -57,7 +57,7 @@
             padding: 0;
             font-size: 46px;
             font-weight: bold;
-            animation: bounce 20s infinite alternate;
+            animation: bounce 4s infinite alternate;
         }
 
         @keyframes bounce {
@@ -65,12 +65,12 @@
                 transform: translateY(-2px);
             }
             100% {
-                transform: translateY(700px);
+                transform: translateY(15px);
             }
         }
 
         .statement {
-            font-family: 'Old Standard TT', serif; /* Old-school font */
+            font-family: 'Old Standard', serif; /* Old-school font */
             font-size: 44px; /* Adjusted font size */
             text-align: left;
             position: fixed; /* Keep the statement fixed */
@@ -99,13 +99,6 @@
             margin: 10px 0;
         }
 
-        body {
-            margin: 0;
-            padding: 0;
-            cursor: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neapolitan_ice_cream_cone.jpg/220px-Neapolitan_ice_cream_cone.jpg'), auto;
-            /* Replace the URL with the path to your ice cream image */
-        }
-
 
     </style>
 </head>
@@ -115,12 +108,14 @@
         <marquee-set speed="3" height="70vh" friction="0" behavior="bounce" vertical-height="18" direction="diagonal">
             <marquee-inner slot="contents">
                 <h1>ERIC HUA QING ZHANG</h1>
+                <hr>
+                
             </marquee-inner>
         </marquee-set>
         <div class="statement">
-            I am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>. 
-            I am currently based in <span>Oxford/London</span>, UK. I am originally from <span>Vancouver</span>, Canada but also spent quite some time in <span>Beijing</span>, China. 
-            I have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.
+            i am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>. 
+            i am currently based in <span>Oxford/London</span>, UK. I am originally from <span>Vancouver</span>, Canada but also spent quite some time in <span>Beijing</span>, China. 
+            i have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.
         </div>
     </div>
 </body>
