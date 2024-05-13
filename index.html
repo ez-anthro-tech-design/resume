@@ -5,91 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I am Eric Zhang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        #Ericname body {
-            font-family: Arial, sans-serif;
+        body {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f5f5dc; /* Dim yellow background */
+            font-family: 'Libre Baskerville', serif; /* Title font */
         }
 
-        .header {
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+            font-size: 36px;
+            font-weight: bold;
             text-align: center;
-            margin-top: 20px;
-            font-size: 24px;
         }
 
-        .line {
-            width: 80%;
-            border-top: 1px solid black;
-            margin: 20px 0;
+        marquee-set {
+            display: block;
+            width: 100%;
+            height: 70vh;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
-        #introduction body {
-            font-family: Arial, sans-serif;
+        marquee-inner {
+            display: block;
+            height: 100%;
+        }
+
+        marquee-inner h1 {
+            text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-size: 36px;
+            font-weight: bold;
+            animation: bounce 4s infinite alternate;
         }
 
-        p {
-            font-size: 24px;
+        @keyframes bounce {
+            0% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(10px);
+            }
         }
 
-        .zoom {
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .zoom:hover {
-            transform: scale(1.5);
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 10px 0;
         }
     </style>
-
 </head>
-<text-icon icon="happy-face-2"></text-icon>
-<hr>
-<hr>
-<h1 style="--font-scale: 1.21;">
-    <div style="text-align: center"><b></b></div>
-</h1><marquee-set speed="3" height="70vh" friction="0" behavior="bounce" vertical-height="18"
-    direction="diagonal"><marquee-inner slot="contents">
-        <h1 style="--font-scale: 1.21;">
-            <div style="text-align: center"><b>ERIC HUA QING ZHANG </b></div>
-        </h1><span style="--font-scale: 1.21;"></span>
-    </marquee-inner></marquee-set>
-<hr>
-<hr>
 
 <body>
+    <hr>
+    <marquee-set speed="3" height="70vh" friction="0" behavior="bounce" vertical-height="18" direction="diagonal">
+        <marquee-inner slot="contents">
+            <h1>ERIC HUA QING ZHANG</h1>
+            <hr>
 
-    <div>
-        <p>Hi, my name is Eric! I am an <span class="zoom" onclick="goToAnthropologist()">Anthropologist</span>, a <span
-                class="zoom" onclick="goToTechSavvy()">Tech-savvy</span>, and a <span class="zoom"
-                onclick="goToDesigner()">Designer</span>.</p>
-    </div>
-
-    <script>
-        function goToAnthropologist() {
-            // Redirect to another page for Anthropologist
-            window.location.href = "anthropologist-page.html";
-        }
-
-        function goToTechSavvy() {
-            // Redirect to another page for Tech-savvy
-            window.location.href = "tech-savvy-page.html";
-        }
-
-        function goToDesigner() {
-            // Redirect to another page for Designer
-            window.location.href = "designer-page.html";
-        }
-    </script>
+        </marquee-inner>
+    </marquee-set>
 </body>
 
 </html>
