@@ -11,7 +11,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #0d0d0e; /* Dim yellow background */
+            background-color: #fef9e3; /* Dim yellow background */
             font-family: 'Old Standard TT', serif; /* Old-school font */
             text-align: center; /* Center text horizontally */
             display: flex;
@@ -33,6 +33,11 @@
             animation: bounce 2s infinite alternate; /* Bouncing animation */
         }
 
+        h1 span:hover {
+            color: #a510ea; /* Change color on hover */
+            cursor: pointer;  /* Change cursor on hover */
+        }
+
         .statement {
             font-size: 3.5vw; /* Responsive font size based on viewport width */
             text-align: left;
@@ -40,7 +45,7 @@
             max-width: 800px; /* Maximum width to prevent stretching */
             margin: 5vh auto; /* Responsive margin based on viewport height */
             padding: 2vw; /* Responsive padding based on viewport width */
-            background-color: rgba(243, 143, 210, 0.9); /* Semi-transparent pink background */
+            background-color: #fef9e3; /* Semi-transparent pink background */
             z-index: 998; /* Ensure it's below the h1 */
         }
 
@@ -81,7 +86,7 @@
 </head>
 
 <body>
-    <h1>ERIC HUA QING ZHANG</h1>
+    <h1><span>ERIC HUA QING ZHANG</span></h1>
     <div class="content">
         <div class="statement">
             <p>i am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>.</p>
