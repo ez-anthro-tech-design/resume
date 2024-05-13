@@ -15,51 +15,22 @@
             font-family: 'Old Standard TT', serif; /* Old-school font */
             text-align: center; /* Center text horizontally */
             display: flex;
-            flex-direction: column; /* Align items vertically */
-            justify-content: center; /* Center items vertically */
-            align-items: center; /* Center items horizontally */
-            height: 200vh; /* Adjusted height for demonstration */
+            justify-content: center;
+            align-items: center;
+            height: 50vh; /* Adjusted height for demonstration */
         }
         
         h1 {
+            position: fixed; /* Keep the h1 fixed */
+            top: 0; /* Stick to the top */
+            left: 0; /* Stick to the left */
+            width: 100%; /* Take full width */
             font-size: 36px;
             font-weight: bold;
             margin: 0;
             background-color: rgba(243, 143, 210, 0.9); /* Semi-transparent background for readability */
             padding: 20px 0;
-            width: 80%; /* Take 80% width */
-            max-width: 600px; /* Limit maximum width */
-            z-index: 1; /* Ensure it's above other content */
-        }
-
-        .content {
-            margin-top: 80px; /* Adjusted top margin */
-            width: 80%; /* Take 80% width */
-            max-width: 600px; /* Limit maximum width */
-            z-index: 0; /* Ensure it's below the h1 */
-        }
-
-        .statement {
-            font-family: 'Old Standard TT', serif; /* Old-school font */
-            font-size: 18px; /* Adjusted font size */
-            text-align: left;
-            padding: 20px; /* Add padding for readability */
-        }
-
-        .statement span {
-            font-weight: bold;
-            color: black; /* Default color */
-        }
-
-        .statement span:hover {
-            color: blue; /* Change color on hover */
-            cursor: pointer; /* Change cursor on hover */
-        }
-
-        hr {
-            border: none;
-            border-top: 2px solid #000000;
-            margin: 10px 0;
+            z-index: 999; /* Ensure it's above other content */
         }
 
         marquee-set {
@@ -93,20 +64,50 @@
             }
         }
 
+        .statement {
+            font-family: 'Old Standard TT', serif; /* Old-school font */
+            font-size: 74px; /* Adjusted font size */
+            text-align: left;
+            /* Removed position: fixed */
+            /* Removed top, left, transform properties */
+            width: 80%; /* Adjusted width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding for readability */
+            z-index: 998; /* Ensure it's below the h1 */
+        }
+
+        .statement span {
+            font-weight: bold;
+            color: black; /* Default color */
+        }
+
+        .statement span:hover {
+            color: blue; /* Change color on hover */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #000000;
+            margin: 10px 0;
+        }
+
+
     </style>
 </head>
 
 <body>
-    <h1>ERIC HUA QING ZHANG</h1>
     <div class="content">
         <marquee-set speed="3" height="70vh" friction="0" behavior="bounce" vertical-height="18" direction="diagonal">
             <marquee-inner slot="contents">
+                <h1>ERIC HUA QING ZHANG</h1>
                 
             </marquee-inner>
         </marquee-set>
         <div class="statement">
             i am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>. 
-            i am currently based in <span>Oxford/London</span>, UK. I am originally from <span>Vancouver</span>, Canada but also spent quite some time in <span>Beijing</span>, China. 
+            i am currently based in <span>Oxford/London</span>, UK. 
+            i am originally from <span>Vancouver</span>, Canada but have also spent quite some time in <span>Beijing</span>, China. 
             i have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.
         </div>
     </div>
