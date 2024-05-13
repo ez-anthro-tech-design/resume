@@ -15,64 +15,33 @@
             font-family: 'Old Standard TT', serif; /* Old-school font */
             text-align: center; /* Center text horizontally */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh; /* Adjusted height for demonstration */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure full viewport height */
         }
         
         h1 {
-            position: fixed; /* Keep the h1 fixed */
-            top: 0; /* Stick to the top */
-            left: 0; /* Stick to the left */
-            width: 100%; /* Take full width */
-            font-size: 36px;
+            font-size: 5vw; /* Responsive font size based on viewport width */
             font-weight: bold;
             margin: 0;
             background-color: rgba(243, 143, 210, 0.9); /* Semi-transparent background for readability */
-            padding: 20px 0;
+            padding: 2vh 0; /* Responsive padding based on viewport height */
+            width: 80%; /* Adjusted width */
+            max-width: 800px; /* Maximum width to prevent stretching */
+            position: sticky; /* Stick the heading to the top */
+            top: 0; /* Stick to the top */
             z-index: 999; /* Ensure it's above other content */
-        }
-
-        marquee-set {
-            display: block;
-            width: 100%;
-            height: 70vh;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        marquee-inner {
-            display: block;
-            height: 100%;
-        }
-
-        marquee-inner h1 {
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            font-size: 46px;
-            font-weight: bold;
-            animation: bounce 4s infinite alternate;
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(-2px);
-            }
-            100% {
-                transform: translateY(15px);
-            }
+            animation: bounce 4s infinite alternate; /* Bouncing animation */
         }
 
         .statement {
-            font-family: 'Old Standard TT', serif; /* Old-school font */
-            font-size: 74px; /* Adjusted font size */
+            font-size: 3.5vw; /* Responsive font size based on viewport width */
             text-align: left;
-            /* Removed position: fixed */
-            /* Removed top, left, transform properties */
             width: 80%; /* Adjusted width */
-            margin: 0 auto; /* Center horizontally */
-            padding: 20px; /* Add padding for readability */
+            max-width: 800px; /* Maximum width to prevent stretching */
+            margin: 5vh auto; /* Responsive margin based on viewport height */
+            padding: 2vw; /* Responsive padding based on viewport width */
             z-index: 998; /* Ensure it's below the h1 */
         }
 
@@ -92,23 +61,34 @@
             margin: 10px 0;
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw; /* Adjusted font size for smaller screens */
+            }
+            .statement {
+                font-size: 6vw; /* Adjusted font size for smaller screens */
+            }
+        }
 
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+            100% {
+                transform: translateY(15px);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <h1>ERIC HUA QING ZHANG</h1>
     <div class="content">
-        <marquee-set speed="3" height="70vh" friction="0" behavior="bounce" vertical-height="18" direction="diagonal">
-            <marquee-inner slot="contents">
-                <h1>ERIC HUA QING ZHANG</h1>
-                
-            </marquee-inner>
-        </marquee-set>
         <div class="statement">
-            i am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>. 
-            i am currently based in <span>Oxford/London</span>, UK. 
-            i am originally from <span>Vancouver</span>, Canada but have also spent quite some time in <span>Beijing</span>, China. 
-            i have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.
+            <p>i am an <span>Anthropologist</span>, <span>Tech-savvy</span>, and a <span>Designer</span>.</p>
+            <p>i am currently based in <span>Oxford/London</span>, UK.</p>
+            <p>i am originally from <span>Vancouver</span>, Canada but have also spent quite some time in <span>Beijing</span>, China.</p>
+            <p>i have a B.A. in <span>Human Sciences</span>, and a MSc in <span>Medical Anthropology</span>, both from the University of Oxford.</p>
         </div>
     </div>
 </body>
