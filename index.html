@@ -19,6 +19,7 @@
             align-items: center; /* Center content horizontally */
             justify-content: center; /* Center content vertically */
             min-height: 100vh; /* Ensure full viewport height */
+            position: relative; /* Set position relative for absolute positioning of the ball */
         }
         
         h1 {
@@ -48,6 +49,7 @@
             padding: 2vw; /* Responsive padding based on viewport width */
             background-color: #ffe600; /* Semi-transparent pink background */
             z-index: 998; /* Ensure it's below the h1 */
+            position: relative; /* Set position relative for absolute positioning of the ball */
         }
 
         .statement span {
@@ -87,6 +89,18 @@
                 transform: translateY(35px);
             }
         }
+
+        /* Styling for the bouncing ball */
+        .ball {
+            width: 30px;
+            height: 30px;
+            background-color: #ff0000; /* Red ball */
+            border-radius: 50%; /* Make it round */
+            position: absolute; /* Position it absolutely */
+            top: 50%; /* Start position at the center vertically */
+            left: 50%; /* Start position at the center horizontally */
+            transform: translate(-50%, -50%); /* Center it exactly */
+        }
     </style>
 </head>
 
@@ -100,8 +114,61 @@
             <p>i have a B.A. in <span><a href="education.html">Human Sciences</a></span>, and a MSc in <span><a href="education.html">Medical Anthropology</a></span>, both from the University of Oxford.</p>
         </div>
     </div>
-    Welcome. enjoy... :)
+    <div class="ball"></div>
 
+    <script>
+        // JavaScript for bouncing ball functionality
+        const ball = document.querySelector('.ball');
+        const body = document.querySelector('body');
+        const statement = document.querySelector('.statement');
+
+        let vx = 3; // Horizontal velocity
+        let vy = 3; // Vertical velocity
+        const radius = parseInt(window.getComputedStyle(ball).getPropertyValue('width')) / 2; // Radius of the ball
+
+        function updateBallPosition() {
+            const rect = body.getBoundingClientRect();
+            const ballRect = ball.getBoundingClientRect();
+            const statementRect = statement.getBoundingClientRect();
+
+            // Update position
+            let nextX = ballRect.left + vx;
+            let nextY = ballRect.top + vy;
+
+            // Check for collision with edges
+            if (nextX - radius < rect.left || nextX + radius > rect.right) {
+                vx *= -1; // Reverse horizontal velocity
+            }
+            if (nextY - radius < rect.top || nextY + radius > rect.bottom) {
+                vy *= -1; // Reverse vertical velocity
+            }
+
+            // Check for collision with statement
+            if (nextX - radius < statementRect.right && nextX + radius > statementRect.left && nextY - radius < statementRect.bottom && nextY + radius > statementRect.top) {
+                // Horizontal collision
+                if (nextX - radius < statementRect.right && nextX + radius > statementRect.right && vx > 0) {
+                    vx *= -1; // Reverse horizontal velocity
+                }
+                if (nextX + radius > statementRect.left && nextX - radius < statementRect.left && vx < 0) {
+                    vx *= -1; // Reverse horizontal velocity
+                }
+                // Vertical collision
+                if (nextY - radius < statementRect.bottom && nextY + radius > statementRect.bottom && vy > 0) {
+                    vy *= -1; // Reverse vertical velocity
+                }
+                if (nextY + radius > statementRect.top && nextY - radius < statementRect.top && vy < 0) {
+                    vy *= -1; // Reverse vertical velocity
+                }
+            }
+
+            // Update ball position
+            ball.style.left = nextX + 'px';
+            ball.style.top = nextY + 'px';
+        }
+
+        // Update ball position periodically
+        setInterval(updateBallPosition, 1000 / 60); // 60 frames per second
+    </script>
 </body>
 
 </html>
