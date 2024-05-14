@@ -4,171 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZ's Anthropology</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Anthropology and I</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fef9e3;
-            color: #fff;
-            z-index: 998; /* Ensure it's above other content */
-        }
-
-        header {
-            background-color: #fef9e3;
-            color: #0d0c0c;
-            padding: 20px;
-            text-align: center;
-            z-index: 998; /* Ensure it's above other content */
-        }
-
-        h1 {
-            font-size: 3vw; /* Responsive font size based on viewport width */
-            font-weight: bold;
-            background-color: #fef9e3; /* Dim yellow background */
-            margin: 0;
-            width: 100%; /* Take full width */
-            position: sticky; /* Stick the heading to the top */
-            top: 0; /* Stick to the top */
-            z-index: 999; /* Ensure it's above other content */
-            animation: bounce 2s infinite alternate; /* Bouncing animation */
-        }
-
-        h1 span:hover {
-            color: #a510ea; /* Change color on hover */
-            cursor: pointer;  /* Change cursor on hover */
-        }
-
-        /* Define keyframes for rotation animation */
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(5deg);
-            }
-        }
-
-        /* Apply rotation animation to h2 elements */
-        h2 {
-            display: inline-block; /* Make the span behave like an inline-block element */
-            animation: rotate 3s infinite alternate; /* Apply rotation animation */
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 8vw; /* Adjusted font size for smaller screens */
-            }
-            .statement {
-                font-size: 6vw; /* Adjusted font size for smaller screens */
-            }
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(-2px);
-            }
-            100% {
-                transform: translateY(15px);
-            }
-        }
-
-        h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #0f0e0e;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 998; /* Ensure it's above other content */
+            font-family: Georgia, sans-serif;
+            color: #000;
+            /* White text color */
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 10000px;
             margin: 0 auto;
-            padding: 20px;
-            z-index: 998; /* Ensure it's above other content */
+            padding: 50px;
         }
 
-        section {
-            margin-bottom: 40px;
-            z-index: 998; /* Ensure it's above other content */
+        h1 {
+            text-align: left;
+            margin-left: 0px;
+            /* Adjust the left margin */
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-            justify-content: space-around;
-            z-index: 998; /* Ensure it's above other content */
+        .content {
+            display: flex;
+            justify-content: space-between;
         }
 
-        .gallery img {
-            max-width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            z-index: 998; /* Ensure it's above other content */
+        .column {
+            width: 48%;
+            /* Adjust the width of each column */
         }
 
-        .gallery img:hover {
-            transform: scale(1.05);
+        .column h2 {
+            margin-left: 20px;
+            /* Adjust the left margin */
+            margin-bottom: 30px;
+            /* Add some space below the heading */
         }
 
-        footer {
-            background-color: #fef9e3;
-            color: #0c0a0a;
-            padding: 20px;
-            text-align: center;
-            z-index: 998; /* Ensure it's above other content */
+        .column p {
+            margin-left: 20px;
+            /* Adjust the left margin */
+
+            margin-bottom: 30px;
+            /* Add some space below the paragraph */
         }
 
+        .line {
+            border-top: 1px solid #000;
+            /* White line */
+            margin-bottom: 50px;
+            /* Add some space below the line */
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1><span>ERIC HUA QING ZHANG</span></h1>
-        <h2>Anthropology and I</h2>
-    </header>
     <div class="container">
-        <section>
-            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
-            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
-            <div class="gallery">
-                <img src="forest1.jpg" alt="Forest 1">
-                <img src="forest2.jpg" alt="Forest 2">
-                <img src="forest3.jpg" alt="Forest 3">
+
+
+        <h1>Anthropology and I</h1>
+        <div class="line"></div>
+        <div class="content">
+            <div class="column">
+                <h2>Critical Medical Anthropology: </h2>
+                <p>What is ‘critical’ about critical medical anthropology? Who does this critique serve?
+                    .</p>
+
             </div>
-        </section>
-        <section>
-            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
-            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
-            <div class="gallery">
-                <img src="trail1.jpg" alt="Trail 1">
-                <img src="trail2.jpg" alt="Trail 2">
-                <img src="trail3.jpg" alt="Trail 3">
+            <div class="column">
+                <h2> I:</h2>
+                <p>In his assertion that "medicine is a social science and politics is nothing else but medicine on a
+                    large scale," Virchow sets the tone for the role of critical medical anthropology in pointing out
+                    the invisible causes of human suffering as a result of the interplay of sociocultural, political,
+                    and economic factors in every arena of social life (Estroff, 1988). Instead of adopting a horizontal
+                    approach that views all individuals as equals in the ever-sinking whirlpool of Capitalism, critical
+                    medical anthropology delineates the "vertical links" connecting different social groups positioned
+                    along the non-hierarchical axis of social life. In such a vein, critical medical anthropology
+                    addresses the social alignment of power that profits a small group of individuals while exploiting
+                    the large mass of others who are marginalised in the Capitalocene (Singer, 1989). Critical medical
+                    anthropology looks beyond the socioculturalist view, which delved too deeply into the microlevel
+                    analysis of social life to the extent of lacking, if not completely neglecting, the macro level view
+                    of external political and economic forces that also shape the health behaviours and outcomes of
+                    populations. This essay aims to provide readers with a macro-level approach to human suffering and
+                    illness in critical medical anthropology, lifting our gaze from immersing too deeply in the
+                    fascinating minutiae of field experiences (Singer, 1989). This essay will first examine what is
+                    'critical' about critical medical anthropology by discussing how it marries broader social relations
+                    of the political economy to micro-level understandings of local sociocultural insights into
+                    suffering and illness. Extending the realisation of power, control, and exploitation in political
+                    economy, this essay will further address the ‘criticals’ of CMA through a discussion on the
+                    shortcomings of the biomedical model in creating a dichotomy between natural and cultural
+                    constructions of of health, disease, and illness (Singer and Baer, 2004). After dispelling the
+                    dichotomised view of sociocultural and biological roots of suffering, another ‘critical’ aspect of
+                    critical medical anthropology is recognising suffering as a syndemic in the context of a biosocial
+                    construction of health (Singer et al., 2017). The syndemics of health thus emphasise who some of the
+                    subjects of critical medical anthropology studies are - those who have long been marginalised,
+                    victimised, and neglected in the discussion of health policies due to the medical hegemony of
+                    Western biomedical values, coupled with the global adoption of a capitalist political economy. In
+                    this regard, critical medical anthropology can illustrate how, even with a deeper exploration of the
+                    nuances of sociocultural influences on health behaviours, medical pluralism remains 'plural' rather
+                    than 'pluralistic' under the dominance of biomedicine (Singer and Baer, 2004).
+                </p>
+                <p>Etiam maximus nisi ac quam finibus, a dignissim urna ultrices.</p>
+                <p>Phasellus rutrum enim vitae dui fermentum, nec fermentum nisl efficitur.</p>
             </div>
-        </section>
-        <section>
-            <h2><b><span style="--font-scale:1.2;">P</span></b>OOR</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp;O</span></b>LD</h2>
-            <h2><b><span style="--font-scale:1.2;"> &nbsp; &nbsp; T</span></b>IRED</h2>
-            <h2><b><span style="--font-scale:1.2;"> H</span></b>ORSE</h2>
-            <div class="gallery">
-                <img src="landscape1.jpg" alt="Landscape 1">
-                <img src="landscape2.jpg" alt="Landscape 2">
-                <img src="landscape3.jpg" alt="Landscape 3">
-            </div>
-        </section>
+        </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Eric Zhang</p>
-    </footer>
 </body>
 
 </html>
