@@ -109,6 +109,22 @@
             }
         }
 
+        
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+        }
+
+        .icon-container a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+
     </style>
 </head>
 
@@ -123,6 +139,14 @@
             <p>i have a B.A. in <span><a href="education.html">Human Sciences</a></span>, and a MSc in <span><a href="education.html">Medical Anthropology</a></span>, both from the University of Oxford.</p>
         </div>
     </div>
+
+    <div class="icon-container">
+        <a href="https://www.linkedin.com/in/erichuaqingzhang/" target="_blank"><i class="fab fa-linkedin icon"></i></a>
+        <a href="https://github.com/ez-anthro-tech-design" target="_blank"><i class="fab fa-github icon"></i></a>
+        <a href="ericzhangez1006@gmail.com"><i class="fas fa-envelope icon"></i></a>
+    </div>
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
     <script>
         const links = document.querySelectorAll('.statement span a');
