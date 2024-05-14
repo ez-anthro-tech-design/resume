@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthropology and I</title>
     <style>
+        
+        h1 {
+            font-size: 1.5vw; /* Responsive font size based on viewport width */
+            font-weight: bold;
+            margin: 0;
+            width: 100%; /* Take full width */
+            position: sticky; /* Stick the heading to the top */
+            top: 0; /* Stick to the top */
+            z-index: 999; /* Ensure it's above other content */
+            animation: bounce 2s infinite alternate; /* Bouncing animation */
+        }
+
+        h1 span:hover {
+            color: #f69cc2; /* Change color on hover */
+            cursor: pointer;  /* Change cursor on hover */
+            transition: color 1s; /* Smooth color transition */
+        }
+
+
         body {
             margin: 0;
             padding: 0;
