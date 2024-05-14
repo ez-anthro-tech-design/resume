@@ -6,61 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthropology and I</title>
     <style>
-        myname {
-            font-size: 1.5vw;
-            /* Responsive font size based on viewport width */
+        
+
+
+   .container span {
             font-weight: bold;
-            background-color: antiquewhite;
-            margin: 0;
-            width: 100%;
-            /* Take full width */
-            position: sticky;
-            /* Stick the heading to the top */
-            top: 0;
-            /* Stick to the top */
-            z-index: 999;
-            /* Ensure it's above other content */
-            animation: bounce 2s infinite alternate;
-            /* Bouncing animation */
+
         }
 
-        myname span:hover {
-            color: #852d52;
-            /* Change color on hover */
-            cursor: pointer;
-            /* Change cursor on hover */
-            transition: color 1s;
-            /* Smooth color transition */
+        .container span a {
+            color: #000; 
             text-decoration: none; /* Remove underline */
-
         }
 
-
-        @media (max-width: 768px) {
-            myname {
-                font-size: 8vw;
-                /* Adjusted font size for smaller screens */
-            }
-
-            .statement {
-                font-size: 6vw;
-                /* Adjusted font size for smaller screens */
-            }
+        .container span a:hover {
+            color: #8c365a; /* Change color on hover */
+            cursor: pointer; /* Change cursor on hover */
+            transition: color 0.8s; /* Smooth color transition */
         }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(-2px);
-            }
-
-            100% {
-                transform: translateY(45px);
-            }
-        }
-
-
-
-
 
         body {
             margin: 0;
@@ -71,7 +34,7 @@
         }
 
         .container {
-            max-width: 10000px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 50px;
         }
@@ -85,25 +48,26 @@
         .content {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
         }
 
         .column {
             width: 48%;
-            /* Adjust the width of each column */
+            margin-bottom: 30px;
+            /* Add some space below each column */
         }
 
         .column h2 {
             margin-left: 20px;
             /* Adjust the left margin */
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             /* Add some space below the heading */
         }
 
         .column p {
             margin-left: 20px;
             /* Adjust the left margin */
-
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             /* Add some space below the paragraph */
         }
 
