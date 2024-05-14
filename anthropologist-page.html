@@ -7,9 +7,12 @@
     <title>Anthropology and I</title>
     <style>
         .container {
-            position: sticky; /* Stick the heading to the top */
-            top: 0; /* Stick to the top */
-            z-index: 999; /* Ensure it's above other content */
+            position: sticky;
+            /* Stick the heading to the top */
+            top: 0;
+            /* Stick to the top */
+            z-index: 999;
+            /* Ensure it's above other content */
             background-color: white;
             padding: 30px;
             max-width: 100%;
@@ -22,13 +25,17 @@
 
         .container span a {
             color: #000;
-            text-decoration: none; /* Remove underline */
+            text-decoration: none;
+            /* Remove underline */
         }
 
         .container span a:hover {
-            color: #8c365a; /* Change color on hover */
-            cursor: pointer; /* Change cursor on hover */
-            transition: color 0.8s; /* Smooth color transition */
+            color: #8c365a;
+            /* Change color on hover */
+            cursor: pointer;
+            /* Change cursor on hover */
+            transition: color 0.8s;
+            /* Smooth color transition */
         }
 
         body {
@@ -40,13 +47,15 @@
 
         h1 {
             text-align: left;
-            margin-left: 30px; /* Adjust the left margin */
+            margin-left: 30px;
+            /* Adjust the left margin */
         }
 
         .content {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
+            flex-wrap: wrap;
+            /* Ensure columns wrap on smaller screens */
         }
 
         .column {
@@ -57,8 +66,10 @@
 
         .column h2,
         .column p {
-            margin-left: 30px; /* Adjust the left margin */
-            margin-bottom: 20px; /* Add some space below the heading and paragraph */
+            margin-left: 30px;
+            /* Adjust the left margin */
+            margin-bottom: 20px;
+            /* Add some space below the heading and paragraph */
         }
 
         .line {
@@ -81,17 +92,28 @@
             cursor: pointer;
         }
 
-.sidebar span a {
+        .sidebar span a {
             text-decoration: none;
         }
 
         .sidebar:hover {
             background-color: #e0e0e0;
-            transition: color 0.8s; /* Smooth color transition */
+            transition: color 0.8s;
+            /* Smooth color transition */
 
         }
 
+        .scroll-color {
+            color: black;
+            /* Default color */
+            transition: color 0.5s ease;
+            /* Smooth transition */
+        }
 
+        .scroll-color.scrolled {
+            color: #8c365a;
+            /* Color when scrolled to the bottom */
+        }
     </style>
 </head>
 
@@ -206,7 +228,8 @@
                 crosses culturally constructed territorial boundaries. The disease, a biomedically constructed cultural
                 concept, similarly becomes subject to political-economic forces, and, in a cloud of quasi-species
                 intermingling, is given new identities associated with traditional Asian agricultural practices, which
-                then become viewed as a potent source of risks (Lowe, 2010).</p>  <p>In his assertion that "medicine is a social science and politics is nothing else but medicine on a
+                then become viewed as a potent source of risks (Lowe, 2010).</p>
+            <p>In his assertion that "medicine is a social science and politics is nothing else but medicine on a
                 large scale," Virchow sets the tone for the role of critical medical anthropology in pointing out
                 the invisible causes of human suffering as a result of the interplay of sociocultural, political,
                 and economic factors in every arena of social life (Estroff, 1988). Instead of adopting a horizontal
@@ -299,6 +322,21 @@
                 then become viewed as a potent source of risks (Lowe, 2010).</p>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY + window.innerHeight;
+            var totalHeight = document.body.scrollHeight;
+
+            if (scrollPosition >= totalHeight) {
+                document.querySelector('.container span').classList.add('scroll-color');
+            } else {
+                document.querySelector('.container span').classList.remove('scroll-color');
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
