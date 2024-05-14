@@ -6,23 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthropology and I</title>
     <style>
-        
-        h1 {
-            font-size: 1.5vw; /* Responsive font size based on viewport width */
+        myname {
+            font-size: 1.5vw;
+            /* Responsive font size based on viewport width */
             font-weight: bold;
             margin: 0;
-            width: 100%; /* Take full width */
-            position: sticky; /* Stick the heading to the top */
-            top: 0; /* Stick to the top */
-            z-index: 999; /* Ensure it's above other content */
-            animation: bounce 2s infinite alternate; /* Bouncing animation */
+            width: 100%;
+            /* Take full width */
+            position: sticky;
+            /* Stick the heading to the top */
+            top: 0;
+            /* Stick to the top */
+            z-index: 999;
+            /* Ensure it's above other content */
+            animation: bounce 2s infinite alternate;
+            /* Bouncing animation */
         }
 
-        h1 span:hover {
-            color: #f69cc2; /* Change color on hover */
-            cursor: pointer;  /* Change cursor on hover */
-            transition: color 1s; /* Smooth color transition */
+        myname span:hover {
+            color: #f69cc2;
+            /* Change color on hover */
+            cursor: pointer;
+            /* Change cursor on hover */
+            transition: color 1s;
+            /* Smooth color transition */
         }
+
+
+        @media (max-width: 768px) {
+            myname {
+                font-size: 8vw;
+                /* Adjusted font size for smaller screens */
+            }
+
+            .statement {
+                font-size: 6vw;
+                /* Adjusted font size for smaller screens */
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+
+            100% {
+                transform: translateY(45px);
+            }
+        }
+
+
+
 
 
         body {
@@ -80,7 +114,9 @@
 </head>
 
 <body>
+
     <div class="container">
+        <myname><span><a href="index.html"></a>ERIC HUA QING 華卿 ZHANG </span></myname>
 
 
         <h1>Anthropology and I</h1>
