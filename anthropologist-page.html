@@ -7,12 +7,9 @@
     <title>Anthropology and I</title>
     <style>
         .container {
-            position: sticky;
-            /* Stick the heading to the top */
-            top: 0;
-            /* Stick to the top */
-            z-index: 999;
-            /* Ensure it's above other content */
+            position: sticky; /* Stick the heading to the top */
+            top: 0; /* Stick to the top */
+            z-index: 999; /* Ensure it's above other content */
             background-color: white;
             padding: 30px;
             max-width: 100%;
@@ -25,17 +22,13 @@
 
         .container span a {
             color: #000;
-            text-decoration: none;
-            /* Remove underline */
+            text-decoration: none; /* Remove underline */
         }
 
         .container span a:hover {
-            color: #8c365a;
-            /* Change color on hover */
-            cursor: pointer;
-            /* Change cursor on hover */
-            transition: color 0.8s;
-            /* Smooth color transition */
+            color: #8c365a; /* Change color on hover */
+            cursor: pointer; /* Change cursor on hover */
+            transition: color 0.8s; /* Smooth color transition */
         }
 
         body {
@@ -47,15 +40,13 @@
 
         h1 {
             text-align: left;
-            margin-left: 30px;
-            /* Adjust the left margin */
+            margin-left: 30px; /* Adjust the left margin */
         }
 
         .content {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            /* Ensure columns wrap on smaller screens */
+            flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
         }
 
         .column {
@@ -66,10 +57,8 @@
 
         .column h2,
         .column p {
-            margin-left: 30px;
-            /* Adjust the left margin */
-            margin-bottom: 20px;
-            /* Add some space below the heading and paragraph */
+            margin-left: 30px; /* Adjust the left margin */
+            margin-bottom: 20px; /* Add some space below the heading and paragraph */
         }
 
         .line {
@@ -79,45 +68,31 @@
             /* Add some space below the line */
         }
 
-        /* New styles for the floating sidebar/thumbnail */
-        .sidebar {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 20px 9px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            cursor: pointer;
-        }
+  #progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  #progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4CAF50;
+  }
 
-        .sidebar span a {
-            text-decoration: none;
-        }
 
-        .sidebar:hover {
-            background-color: #e0e0e0;
-            transition: color 0.8s;
-            /* Smooth color transition */
-
-        }
-
-        .scroll-color {
-            color: black;
-            /* Default color */
-            transition: color 0.5s ease;
-            /* Smooth transition */
-        }
-
-        .scroll-color.scrolled {
-            color: #8c365a;
-            /* Color when scrolled to the bottom */
-        }
     </style>
 </head>
 
 <body>
+
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
 
     <div class="container">
         <myname><span><a href="index.html">ERIC HUA QING 華卿 ZHANG </a></span></myname>
@@ -125,14 +100,13 @@
 
     <!-- Floating sidebar/thumbnail -->
     <div class="sidebar">
-        <span><a href="#critical_section">Critical Medical Anthropology</a></span>
     </div>
 
     <h1>Anthropology and I</h1>
     <div class="line"></div>
     <div class="content">
         <div class="column">
-            <h2 id="critical_section">Critical Medical Anthropology: </h2>
+            <h2>Critical Medical Anthropology: </h2>
             <p>What is ‘critical’ about critical medical anthropology? Who does this critique serve?
                 .</p>
         </div>
@@ -228,8 +202,7 @@
                 crosses culturally constructed territorial boundaries. The disease, a biomedically constructed cultural
                 concept, similarly becomes subject to political-economic forces, and, in a cloud of quasi-species
                 intermingling, is given new identities associated with traditional Asian agricultural practices, which
-                then become viewed as a potent source of risks (Lowe, 2010).</p>
-            <p>In his assertion that "medicine is a social science and politics is nothing else but medicine on a
+                then become viewed as a potent source of risks (Lowe, 2010).</p>  <p>In his assertion that "medicine is a social science and politics is nothing else but medicine on a
                 large scale," Virchow sets the tone for the role of critical medical anthropology in pointing out
                 the invisible causes of human suffering as a result of the interplay of sociocultural, political,
                 and economic factors in every arena of social life (Estroff, 1988). Instead of adopting a horizontal
@@ -323,18 +296,17 @@
         </div>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function () {
-            var scrollPosition = window.scrollY + window.innerHeight;
-            var totalHeight = document.body.scrollHeight;
+ <script>
+window.onscroll = function() {scrollFunction()};
 
-            if (scrollPosition >= totalHeight) {
-                document.querySelector('.container span').classList.add('scroll-color');
-            } else {
-                document.querySelector('.container span').classList.remove('scroll-color');
-            }
-        });
-    </script>
+function scrollFunction() {
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+  var scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+  document.getElementById("progress-bar").style.width = scrolled + "%";
+}
+</script>
 
 
 </body>
