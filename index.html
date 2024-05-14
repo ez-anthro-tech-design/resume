@@ -11,63 +11,90 @@
         body {
             margin: 0;
             padding: 20;
-            font-family: 'Georgia', serif; /* Old-school font */
-            text-align: center; /* Center text horizontally */
+            font-family: 'Georgia', serif;
+            /* Old-school font */
+            text-align: center;
+            /* Center text horizontally */
             display: flex;
-            flex-direction: column; /* Stack content vertically */
-            align-items: center; /* Center content horizontally */
-            justify-content: center; /* Center content vertically */
-            min-height: 100vh; /* Ensure full viewport height */
-            position: relative; /* Set position relative for absolute positioning of the ball */
+            flex-direction: column;
+            /* Stack content vertically */
+            align-items: center;
+            /* Center content horizontally */
+            justify-content: center;
+            /* Center content vertically */
+            min-height: 100vh;
+            /* Ensure full viewport height */
+            position: relative;
+            /* Set position relative for absolute positioning of the ball */
         }
-        
+
         h1 {
-            font-size: 1.5vw; /* Responsive font size based on viewport width */
+            font-size: 1.3vw;
+            /* Responsive font size based on viewport width */
             font-weight: bold;
             margin: 0;
             background-color: white;
-            width: 100%; /* Take full width */
-            position: sticky; /* Stick the heading to the top */
-            top: 0; /* Stick to the top */
-            z-index: 999; /* Ensure it's above other content */
-            animation: bounce 2s infinite alternate; /* Bouncing animation */
+            width: 100%;
+            /* Take full width */
+            position: sticky;
+            /* Stick the heading to the top */
+            top: 0;
+            /* Stick to the top */
+            z-index: 999;
+            /* Ensure it's above other content */
+            animation: bounce 3s infinite alternate;
+            /* Bouncing animation */
         }
 
         h1 span:hover {
             color: #852d52;
-            cursor: pointer;  /* Change cursor on hover */
-            transition: color 1s; /* Smooth color transition */
+            cursor: pointer;
+            /* Change cursor on hover */
+            transition: color 1s;
+            /* Smooth color transition */
         }
 
         .statement {
-            font-size: 3vw; /* Responsive font size based on viewport width */
+            font-size: 1.5vw;
+            /* Responsive font size based on viewport width */
             text-align: left;
-            width: 100%; /* Adjusted width */
-            max-width: 1000px; /* Maximum width to prevent stretching */
-            margin: 5vh auto; /* Responsive margin based on viewport height */
-            padding: 2vw; /* Responsive padding based on viewport width */
-            z-index: 998; /* Ensure it's below the h1 */
-            position: relative; /* Set position relative for absolute positioning of the ball */
+            width: 100%;
+            /* Adjusted width */
+            max-width: 1000px;
+            /* Maximum width to prevent stretching */
+            margin: 5vh auto;
+            /* Responsive margin based on viewport height */
+            padding: 2vw;
+            /* Responsive padding based on viewport width */
+            z-index: 998;
+            /* Ensure it's below the h1 */
+            position: relative;
+            /* Set position relative for absolute positioning of the ball */
         }
 
         .statement p {
-            margin: 10px 0; /* Add margin between paragraphs */
+            margin: 10px 0;
+            /* Add margin between paragraphs */
         }
 
         .statement p:nth-child(1) {
-            text-align: left; /* Align the first paragraph to the left */
+            text-align: left;
+            /* Align the first paragraph to the left */
         }
 
         .statement p:nth-child(2) {
-            text-align: right; /* Align the second paragraph to the right */
+            text-align: right;
+            /* Align the second paragraph to the right */
         }
 
         .statement p:nth-child(3) {
-            text-align: left; /* Align the third paragraph to the left */
+            text-align: left;
+            /* Align the third paragraph to the left */
         }
 
         .statement p:nth-child(4) {
-            text-align: right; /* Align the fourth paragraph to the right */
+            text-align: right;
+            /* Align the fourth paragraph to the right */
         }
 
         .statement span {
@@ -75,14 +102,18 @@
         }
 
         .statement span a {
-            color: rgba(224, 222, 142, 0.3); 
-            text-decoration: none; /* Remove underline */
+            color: rgba(224, 222, 142, 0.3);
+            text-decoration: none;
+            /* Remove underline */
         }
 
         .statement span a:hover {
-            color: #8c365a; /* Change color on hover */
-            cursor: pointer; /* Change cursor on hover */
-            transition: color 2s; /* Smooth color transition */
+            color: #8c365a;
+            /* Change color on hover */
+            cursor: pointer;
+            /* Change cursor on hover */
+            transition: color 2s;
+            /* Smooth color transition */
         }
 
         hr {
@@ -93,10 +124,13 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 8vw; /* Adjusted font size for smaller screens */
+                font-size: 8vw;
+                /* Adjusted font size for smaller screens */
             }
+
             .statement {
-                font-size: 6vw; /* Adjusted font size for smaller screens */
+                font-size: 6vw;
+                /* Adjusted font size for smaller screens */
             }
         }
 
@@ -104,12 +138,13 @@
             0% {
                 transform: translateY(-2px);
             }
+
             100% {
                 transform: translateY(45px);
             }
         }
 
-        
+
         .icon-container {
             display: flex;
             justify-content: space-around;
@@ -124,7 +159,6 @@
         .icon {
             font-size: 2rem;
         }
-
     </style>
 </head>
 
@@ -133,10 +167,14 @@
     <hr>
     <div class="content">
         <div class="statement">
-            <p>i am an <span><a href="anthropologist-page.html">Anthropologist</a></span>, <span><a href="tech-savvy-page.html">Tech-savvy</a></span>, and a <span><a href="designer-page.html">Designer</a></span>.</p>
+            <p>i am an <span><a href="anthropologist-page.html">Anthropologist</a></span>, <span><a
+                        href="tech-savvy-page.html">Tech-savvy</a></span>, and a <span><a
+                        href="designer-page.html">Designer</a></span>.</p>
             <p>i am currently based in <span><a href="oxfordlondon.html">Oxford/London</a></span>, UK.</p>
-            <p>i am originally from <span><a href="vancouver.html">Vancouver</a></span>, Canada but have also spent quite some time in <span><a href="beijing.html">Beijing</a></span>, China.</p>
-            <p>i have a B.A. in <span><a href="education.html">Human Sciences</a></span>, and a MSc in <span><a href="education.html">Medical Anthropology</a></span>, both from the University of Oxford.</p>
+            <p>i am originally from <span><a href="vancouver.html">Vancouver</a></span>, Canada but have also spent
+                quite some time in <span><a href="beijing.html">Beijing</a></span>, China.</p>
+            <p>i have a B.A. in <span><a href="education.html">Human Sciences</a></span>, and a MSc in <span><a
+                        href="education.html">Medical Anthropology</a></span>, both from the University of Oxford.</p>
         </div>
     </div>
 
