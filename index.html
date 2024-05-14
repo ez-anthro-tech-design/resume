@@ -32,13 +32,10 @@
             animation: bounce 2s infinite alternate; /* Bouncing animation */
         }
 
-
-
         h1 span:hover {
             color: #f69cc2; /* Change color on hover */
             cursor: pointer;  /* Change cursor on hover */
             transition: color 1s; /* Smooth color transition */
-
         }
 
         .statement {
@@ -52,6 +49,26 @@
             position: relative; /* Set position relative for absolute positioning of the ball */
         }
 
+        .statement p {
+            margin: 10px 0; /* Add margin between paragraphs */
+        }
+
+        .statement p:nth-child(1) {
+            text-align: left; /* Align the first paragraph to the left */
+        }
+
+        .statement p:nth-child(2) {
+            text-align: right; /* Align the second paragraph to the right */
+        }
+
+        .statement p:nth-child(3) {
+            text-align: left; /* Align the third paragraph to the left */
+        }
+
+        .statement p:nth-child(4) {
+            text-align: right; /* Align the fourth paragraph to the right */
+        }
+
         .statement span {
             font-weight: bold;
             color: #0000FF; /* Default color */
@@ -60,14 +77,12 @@
         .statement span a {
             color: rgba(224, 222, 142, 0.3); 
             text-decoration: none; /* Remove underline */
-
         }
 
         .statement span a:hover {
             color: #8c365a; /* Change color on hover */
             cursor: pointer; /* Change cursor on hover */
             transition: color 2s; /* Smooth color transition */
-
         }
 
         hr {
@@ -99,6 +114,7 @@
 
 <body>
     <h1><span>ERIC HUA QING ZHANG</span></h1>
+    <hr>
     <div class="content">
         <div class="statement">
             <p>i am an <span><a href="anthropologist-page.html">Anthropologist</a></span>, <span><a href="tech-savvy-page.html">Tech-savvy</a></span>, and a <span><a href="designer-page.html">Designer</a></span>.</p>
