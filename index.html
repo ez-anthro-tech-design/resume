@@ -1,95 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I am Eric Zhang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 20;
-            font-family: 'Georgia', serif;
-            /* Old-school font */
+            padding: 10px;
+            font-family: 'Cormorant Garamond', serif; /* Changed font family */
             text-align: center;
-            /* Center text horizontally */
             display: flex;
             flex-direction: column;
-            /* Stack content vertically */
             align-items: center;
-            /* Center content horizontally */
             justify-content: center;
-            /* Center content vertically */
-            min-height: 100vh;
-            /* Ensure full viewport height */
+            min-height: 50vh;
             position: relative;
-            /* Set position relative for absolute positioning of the ball */
-        
-        
+            font-weight: bold;
+
         }
 
         h1 {
-            font-size: 2vw;
-            /* Responsive font size based on viewport width */
-            font-weight: bold;
+            font-size: 2.2vw;
             margin: 0;
             background-color: white;
             width: 100%;
-            /* Take full width */
             position: sticky;
-            /* Stick the heading to the top */
             top: 0;
-            /* Stick to the top */
             z-index: 999;
-            /* Ensure it's above other content */
             animation: bounce 1.8s infinite alternate;
-            /* Bouncing animation */
         }
 
         h1 span:hover {
             color: #852d52;
             cursor: pointer;
-            /* Change cursor on hover */
             transition: color 1s;
-            /* Smooth color transition */
         }
 
         .statement {
-            font-size: 3.5vw; /* Responsive font size based on viewport width */
-            text-align: left; /* Align text to the left */
-            width: 100%; /* Adjusted width */
-            max-width: 1300px; /* Maximum width to prevent stretching */
-            padding: 5vw; /* Responsive padding based on viewport width */
-            z-index: 998; /* Ensure it's below the h1 */
-            position: relative; /* Set position relative for absolute positioning of the ball */
-            padding-left: 0; /* Remove left padding */       
- }
+            font-size: 3.5vw;
+            text-align: left;
+            width: 100%;
+            max-width: 1300px;
+            padding: 2vw;
+            z-index: 998;
+            position: relative;
+            padding-left: 0;
+        }
 
         .statement p {
             margin: 10px 0;
-            /* Add margin between paragraphs */
         }
 
         .statement p:nth-child(1) {
             text-align: left;
-            /* Align the first paragraph to the left */
         }
 
         .statement p:nth-child(2) {
             text-align: right;
-            /* Align the second paragraph to the right */
         }
 
         .statement p:nth-child(3) {
             text-align: left;
-            /* Align the third paragraph to the left */
         }
 
         .statement p:nth-child(4) {
             text-align: right;
-            /* Align the fourth paragraph to the right */
         }
 
         .statement span {
@@ -99,16 +78,12 @@
         .statement span a {
             color: rgba(224, 222, 142, 0.3);
             text-decoration: none;
-            /* Remove underline */
         }
 
         .statement span a:hover {
             color: #8c365a;
-            /* Change color on hover */
             cursor: pointer;
-            /* Change cursor on hover */
             transition: color 2s;
-            /* Smooth color transition */
         }
 
         hr {
@@ -120,12 +95,10 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 8vw;
-                /* Adjusted font size for smaller screens */
             }
 
             .statement {
                 font-size: 6vw;
-                /* Adjusted font size for smaller screens */
             }
         }
 
@@ -138,7 +111,6 @@
                 transform: translateY(15px);
             }
         }
-
 
         .icon-container {
             display: flex;
@@ -156,9 +128,8 @@
         }
     </style>
 </head>
-
 <body>
-    <h1><span><a href="index.html"></a>ERIC HUA QING 華卿 ZHANG </span></h1>
+    <h1><span><a href="index.html"></a>Eric Hua Qing 華卿 Zhang </span></h1>
     <hr>
     <div class="content">
         <div class="statement">
@@ -199,5 +170,4 @@
         });
     </script>
 </body>
-
 </html>
