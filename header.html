@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am Eric Zhang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+
+            font-family: 'Cormorant Garamond', serif; /* Changed font family */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2vw;
+            margin: 0;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            animation: bounce 1.8s infinite alternate;
+        }
+
+
+        h1 span a {
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        h1 span a:hover {
+            color: #a96581;
+            cursor: pointer;
+            transition: color 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            .statement {
+                font-size: 6vw;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+
+            100% {
+                transform: translateY(15px);
+            }
+        }
+</style>
+</head>
+
+<body>
+    <h1><span><a href="index.html">Eric Hua Qing 華卿 Zhang</a> </span></h1>
+</body>
+</html>
