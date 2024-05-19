@@ -15,9 +15,19 @@
     <style>
         html,
         body {
-            height: 100%;
             margin: 0;
-            font-family: 'Cormorant Garamond', serif;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+
+            font-family: 'Cormorant Garamond', serif; /* Changed font family */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            font-weight: bold;
         }
 
         body {
@@ -28,22 +38,20 @@
         }
 
         h1 {
-            font-size: 2vw;
+            font-size: 7vw;
             margin: 0;
             width: 100%;
             position: sticky;
             top: 0;
             z-index: 999;
-            text-align: center;
-            padding: 20px 0;
             animation: bounce 1.8s infinite alternate;
         }
 
-        h1 span a{
-            font-weight: bold;
-            color: #000000;
-            text-decoration: none;
 
+        h1 span a {
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
         }
 
         h1 span a:hover {
