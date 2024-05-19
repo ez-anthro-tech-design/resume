@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthropology and I: A Collection of My Essays</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
 
         h1 {
@@ -21,7 +25,7 @@
         h1 span:hover {
             color: #852d52;
             cursor: pointer;
-            transition: color 1s;
+            transition: color 0.5s;
         }
 
         @media (max-width: 768px) {
@@ -46,16 +50,25 @@
 
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Cormorant Garamond', serif; /* Changed font family */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
             overflow: hidden;
+            
+            font-size: 3.5vw;
+            text-align: left;
+            width: 100%;
+            max-width: 1300px;
+            padding: 2vw;
+            z-index: 998;
+            position: relative;
+            padding-left: 0;
         }
 
         .container {
