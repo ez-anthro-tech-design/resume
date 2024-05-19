@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +25,7 @@
             min-height: 100vh;
             position: relative;
             font-weight: bold;
+            overflow: auto; /* Make the page scrollable */
         }
 
         body {
@@ -116,14 +114,14 @@
         .essay {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
             margin-bottom: 20px;
             padding: 20px;
             transition: all 0.3s ease;
         }
 
         .essay:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Reduced shadow intensity */
         }
 
         .essay-title {
@@ -190,48 +188,47 @@
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-        <!-- Repeat the .essay div for each essay in your collection -->
-    </div>
+                    culpa qui officia deserunt mollit anim id est
+laborum.</p>
+</div>
+</div>
+<!-- Repeat the .essay div for each essay in your collection -->
+</div>
 
-    <script>
-        function showEssays() {
-            document.getElementById('front-page').style.opacity = '0';
-            document.getElementById('front-page').style.transform = 'translateY(-20px)';
+<script>
+    function showEssays() {
+        document.getElementById('front-page').style.opacity = '0';
+        document.getElementById('front-page').style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            document.getElementById('front-page').style.display = 'none';
+            document.getElementById('essays-page').style.display = 'block';
             setTimeout(() => {
-                document.getElementById('front-page').style.display = 'none';
-                document.getElementById('essays-page').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('essays-page').style.opacity = '1';
-                    document.getElementById('essays-page').style.transform = 'translateY(0)';
-                }, 10);
-            }, 500);
-        }
+                document.getElementById('essays-page').style.opacity = '1';
+                document.getElementById('essays-page').style.transform = 'translateY(0)';
+            }, 10);
+        }, 500);
+    }
 
-        function showIntro() {
-            document.getElementById('essays-page').style.opacity = '0';
-            document.getElementById('essays-page').style.transform = 'translateY(20px)';
+    function showIntro() {
+        document.getElementById('essays-page').style.opacity = '0';
+        document.getElementById('essays-page').style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            document.getElementById('essays-page').style.display = 'none';
+            document.getElementById('front-page').style.display = 'block';
             setTimeout(() => {
-                document.getElementById('essays-page').style.display = 'none';
-                document.getElementById('front-page').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('front-page').style.opacity = '1';
-                    document.getElementById('front-page').style.transform = 'translateY(0)';
-                }, 10);
-            }, 500);
-        }
+                document.getElementById('front-page').style.opacity = '1';
+                document.getElementById('front-page').style.transform = 'translateY(0)';
+            }, 10);
+        }, 500);
+    }
 
-        function toggleContent(element) {
-            var content = element.nextElementSibling.nextElementSibling;
-            if (content.style.height === "0px" || content.style.height === "") {
-                content.style.height = content.scrollHeight + "px";
-            } else {
-                content.style.height = "0px";
-            }
+    function toggleContent(element) {
+        var content = element.nextElementSibling.nextElementSibling;
+        if (content.style.height === "0px" || content.style.height === "") {
+            content.style.height = content.scrollHeight + "px";
+        } else {
+            content.style.height = "0px";
         }
-    </script>
-</body>
+    }
+</script>
 
-</html>
