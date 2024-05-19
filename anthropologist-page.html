@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,25 +15,16 @@
     <style>
         html,
         body {
+            height: 100%;
             margin: 0;
-            padding: 10px;
-            font-family: 'Cormorant Garamond', serif; /* Changed font family */
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
-            font-weight: bold;
-
+            font-family: 'Cormorant Garamond', serif;
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: white;
+            background-color: #f8f9fa;
             overflow: hidden;
         }
 
@@ -39,19 +33,19 @@
             margin: 0;
             background-color: white;
             width: 100%;
-            position: fixed;
+            position: sticky;
             top: 0;
             z-index: 999;
             text-align: center;
             padding: 20px 0;
             animation: bounce 1.8s infinite alternate;
-
         }
 
-        h1 span a {
+        h1 span a{
             font-weight: bold;
             color: #000000;
             text-decoration: none;
+
         }
 
         h1 span a:hover {
