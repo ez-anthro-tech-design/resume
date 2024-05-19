@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Portfolio</title>
     <style>
+        h1 {
+            font-size: 2vw;
+            margin: 0;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            animation: bounce 1.8s infinite alternate;
+        }
+
+
+        h1 span a {
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        h1 span a:hover {
+            color: #a96581;
+            cursor: pointer;
+            transition: color 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            .statement {
+                font-size: 6vw;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+
+            100% {
+                transform: translateY(15px);
+            }
+        }
+        
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #FFFFFF;
@@ -37,6 +80,8 @@
     </style>
 </head>
 <body>
+    <h1><span><a href="index.html">Eric Hua Qing 華卿 Zhang</a> </span></h1>
+
     <div class="container">
         <h1>Design Portfolio</h1>
         <p>Welcome to my design portfolio. Below are some of my recent works.</p>
