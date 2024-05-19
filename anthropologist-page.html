@@ -35,18 +35,40 @@
             z-index: 999;
             text-align: center;
             padding: 20px 0;
+            animation: bounce 1.8s infinite alternate;
+
         }
 
-        h1 span {
+        h1 span a {
             font-weight: bold;
-            color: #333;
+            color: #000000;
             text-decoration: none;
-            transition: color 0.5s;
         }
 
         h1 span a:hover {
             color: #ec106c;
             cursor: pointer;
+            transition: color 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw;
+            }
+
+            .statement {
+                font-size: 6vw;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-2px);
+            }
+
+            100% {
+                transform: translateY(15px);
+            }
         }
 
         .container {
