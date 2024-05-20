@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Eric Hua Qing 華卿 Zhang's design portfolio showcasing various projects and experiences in participatory design, user experience research, and urban green space studies.">
     <title>Design Portfolio</title>
     <style>
         h1 {
@@ -13,19 +14,19 @@
             top: 0;
             z-index: 999;
             animation: bounce 1.8s infinite alternate;
+            padding: 10px 0;
         }
-
 
         h1 span a {
             font-weight: bold;
             color: rgb(0, 0, 0);
             text-decoration: none;
+            transition: color 0.5s;
         }
 
         h1 span a:hover {
             color: #a96581;
             cursor: pointer;
-            transition: color 0.5s;
         }
 
         @media (max-width: 768px) {
@@ -36,62 +37,171 @@
             .statement {
                 font-size: 6vw;
             }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+
+            .container {
+                margin-left: 0;
+            }
         }
 
         @keyframes bounce {
-            0% {
-                transform: translateY(-2px);
+            0%, 100% {
+                transform: translateY(0);
             }
-
-            100% {
+            50% {
                 transform: translateY(15px);
             }
         }
-        
+
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #FFFFFF;
-            color: #000000;
+            background-color: #d0621d;
+            color: #ffffff;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
             padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            min-height: 100vh;
+            margin-left: 220px;
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            overflow-y: auto;
         }
+
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #333;
+            position: fixed;
+            top: 80px; /* Adjust based on the height of the header */
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            color: #a96581;
+        }
+
+        .content {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
         h2 {
             font-size: 24px;
         }
+
         p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.5;
         }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
+
         .gallery img {
             width: 100%;
             height: auto;
+            loading: lazy;
+        }
+
+        .fade {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <h1><span><a href="index.html">Eric Hua Qing 華卿 Zhang</a> </span></h1>
-
-    <div class="container">
-        <h2>Design Portfolio</h2>
-        <p>Welcome to my design portfolio. Below are some of my recent works.</p>
-        <div class="gallery">
-            <!-- Replace the image URLs and alt text with your own -->
-            <img src="微信图片_20240520111620.jpg" alt="Tongji Participatory Design Lab - Co-designer">
-            <img src="image2.jpg" alt="User Experience Researcher">
-            <img src="image3.jpg" alt="Lived Experiences with Urban Green Space - Experience Researcher">
-            <!-- Add more images as needed -->
+    <h1><span><a href="index.html">Eric Hua Qing 華卿 Zhang</a></span></h1>
+    <div class="main-content">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" data-target="work1">Tongji Participatory Design Lab</a></li>
+                <li><a href="#" data-target="work2">User Experience Researcher</a></li>
+                <li><a href="#" data-target="work3">Urban Green Space Experiences</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="content" id="work1">
+                <h2>Tongji Participatory Design Lab</h2>
+                <p>Description of the work related to Tongji Participatory Design Lab.</p>
+                <div class="gallery">
+                    <img src="微信图片_20240520111620.jpg" alt="Tongji Participatory Design Lab - Co-designer">
+                    <!-- Add more images if needed -->
+                </div>
+            </div>
+            <div class="content hidden" id="work2">
+                <h2>User Experience Researcher</h2>
+                <p>Description of the work related to User Experience Researcher.</p>
+                <div class="gallery">
+                    <img src="image2.jpg" alt="User Experience Researcher">
+                    <!-- Add more images if needed -->
+                </div>
+            </div>
+            <div class="content hidden" id="work3">
+                <h2>Urban Green Space Experiences</h2>
+                <p>Description of the work related to Urban Green Space Experiences.</p>
+                <div class="gallery">
+                    <img src="image3.jpg" alt="Lived Experiences with Urban Green Space - Experience Researcher">
+                    <!-- Add more images if needed -->
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
+                document.querySelector(`#${this.dataset.target}`).classList.remove('hidden');
+                document.querySelector(`#${this.dataset.target}`).classList.add('fade');
+            });
+        });
+    </script>
 </body>
 </html>
